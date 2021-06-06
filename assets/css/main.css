@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+body {
+	background-color: #00131c;
 }
 
 #landing-bg {
@@ -17,21 +21,64 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-#landing-bg img {
-	overflow: hidden;
-	position: fixed;
-	top: 0%;
-	left: 50%;
-	max-width: 200%;
-	width: 100%;
-	transform: translateX(-50%);
-}
-
 #logo {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	display: inline-block; /* change the default display type to inline-block */
+	overflow: hidden;
+}
+
+nav {
+	list-style: none;
+	display: flex;
+	position: fixed;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	border-bottom: 2px solid lightblue;
+	background: #0009;
+	color: white;
+}
+
+.nav-logo {
+	display: flex;
+	font-size: 3rem;
+	font-family: "Kaushan Script", cursive;
+	justify-content: space-around;
+	align-items: center;
+}
+nav li {
+	font-family: "Kaushan Script", cursive;
+}
+
+.scroll-for-more {
+	position: absolute;
+	top: calc(100vh - 100px);
+	left: calc(50% - 100px);
+	transform-origin: center;
+
+	-webkit-animation: spin 8s linear infinite;
+	-moz-animation: spin 8s linear infinite;
+	animation: spin 8s linear infinite;
+}
+
+@-moz-keyframes spin {
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes line-anim {
@@ -55,7 +102,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	font-size: 72px;
+	font-size: 4em;
 	text-shadow: white;
 	font-family: "Kaushan Script", cursive;
 	white-space: nowrap;
@@ -121,4 +168,103 @@
 	to {
 		opacity: 1;
 	}
+}
+
+.about-page {
+	background-color: #00131c;
+	margin: 20rem 0rem 20rem 5rem;
+}
+
+#akshit-image {
+	margin: 0;
+	/* height: 120vh; */
+	width: 100%;
+	padding: 1rem;
+}
+
+/* Create two equal columns that floats next to each other */
+
+.column-left {
+	float: left;
+	width: 41.6666666667%;
+	padding: 10px;
+}
+
+.column-right {
+	float: left;
+	width: 58.3333333333%;
+	padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+	.column-left,
+	.column-right {
+		display: table;
+		clear: both;
+		width: 100%;
+		margin-left: 0%;
+	}
+	.about-page {
+		margin-left: 0%;
+	}
+} /* Clear floats after the columns */
+.row:after {
+	display: table;
+	clear: both;
+}
+
+.about-page-heading {
+	font-size: 6.5rem;
+	text-align: left;
+	color: white;
+	/* font-family: "Dela Gothic One", cursive; */
+
+	font-family: "Tahoma", sans-serif;
+	/* letter-spacing: 5px; */
+}
+
+.about-page-subheading {
+	margin-top: 5rem;
+	font-size: 1.5em;
+	text-align: left;
+	color: gray;
+	font-family: "Dela Gothic One", cursive;
+
+	/* font-family: "Tahoma", sans-serif; */
+}
+
+.social-media-handles {
+	margin-top: 10rem;
+	text-align: left;
+	font-family: "Tahoma", sans-serif;
+}
+
+.social-media-heading {
+	font-size: 4rem;
+	color: white;
+}
+
+.social-media-subtitle {
+	color: white;
+}
+
+.social-media-handles ul {
+	list-style: none;
+	color: white;
+	font-size: 2rem;
+	font-family: "Tahoma", sans-serif;
+}
+
+.social-media-handles li {
+	font-family: "Tahoma", sans-serif;
+	font-weight: bolder;
+	padding: 0.5rem 0;
+}
+
+.row:after {
+	display: table;
+	clear: both;
+}
+
+.hello {
 }
