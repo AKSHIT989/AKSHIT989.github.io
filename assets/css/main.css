@@ -33,15 +33,7 @@ body {
 }
 
 nav {
-	/* list-style: none;
-	display: flex;
-	position: fixed;
-	justify-content: space-around;
-	align-items: center; */
 	width: 100%;
-	/* border-bottom: 2px solid lightblue;
-	background: #0009;
-	color: white; */
 }
 
 .nav-logo {
