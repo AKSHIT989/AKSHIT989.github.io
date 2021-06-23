@@ -4,6 +4,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -31,15 +33,15 @@ body {
 }
 
 nav {
-	list-style: none;
+	/* list-style: none;
 	display: flex;
 	position: fixed;
 	justify-content: space-around;
-	align-items: center;
+	align-items: center; */
 	width: 100%;
-	border-bottom: 2px solid lightblue;
+	/* border-bottom: 2px solid lightblue;
 	background: #0009;
-	color: white;
+	color: white; */
 }
 
 .nav-logo {
@@ -50,7 +52,7 @@ nav {
 	align-items: center;
 }
 nav li {
-	font-family: "Kaushan Script", cursive;
+	font-family: "Bebas Neue", cursive;
 }
 
 .scroll-for-more {
@@ -266,5 +268,49 @@ nav li {
 	clear: both;
 }
 
-.hello {
+.icon-scroll,
+.icon-scroll:before {
+	position: absolute;
+	left: 50%;
+}
+.icon-scroll {
+	width: 24px;
+	height: 45px;
+	position: absolute;
+	bottom: 20px;
+	box-shadow: inset 0 0 0 1px #fff;
+	border-radius: 25px;
+}
+.icon-scroll:before {
+	content: "";
+	width: 8px;
+	height: 8px;
+	background: #fff;
+	margin-left: -4px;
+	top: 8px;
+	border-radius: 4px;
+	-webkit-animation-duration: 1.5s;
+	animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: scroll;
+	animation-name: scroll;
+}
+@-webkit-keyframes scroll {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+}
+@keyframes scroll {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
 }

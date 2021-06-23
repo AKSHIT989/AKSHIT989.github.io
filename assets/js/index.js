@@ -1,24 +1,46 @@
-document.addEventListener(
-	"DOMContentLoaded",
-	() => {
-		function animateSgv(id, delay, delayIncrement) {
-			const logo = document.getElementById(id);
-			const logoPaths = document.querySelectorAll(`#${id} path`);
-			delay = delay;
-			for (let i = 0; i < logoPaths.length; i++) {
-				// console.log(logoPaths[i].getTotalLength());
-				logoPaths[i].style.strokeDasharray = logoPaths[i].getTotalLength();
-				logoPaths[i].style.strokeDashoffset = logoPaths[i].getTotalLength();
-				logoPaths[i].style.animation = `line-anim 2s ease forwards ${delay}s`;
-				delay += delayIncrement;
-				// console.log(delay);
-			}
-			logo.style.animation = `fill 1s ease forwards ${delay}s`;
+document.addEventListener("DOMContentLoaded", () => {
+	function animateSgv(id, delay, delayIncrement) {
+		const logo = document.getElementById(id);
+		const logoPaths = document.querySelectorAll(`#${id} path`);
+		for (let i = 0; i < logoPaths.length; i++) {
+			logoPaths[i].style.strokeDasharray = logoPaths[i].getTotalLength();
+			logoPaths[i].style.strokeDashoffset = logoPaths[i].getTotalLength();
+			logoPaths[i].style.animation = `line-anim 2s ease forwards ${delay}s`;
+			delay += delayIncrement;
 		}
-		animateSgv("logo", 0, 1);
-	},
-	false
-);
+		logo.style.animation = `fill 1s ease forwards ${delay}s`;
+	}
+	animateSgv("logo", 0, 1);
+	const menuToggler = (() => {
+		let body;
+		let menu;
+		let menuItems;
+
+		const init = () => {
+			body = document.querySelector("body");
+			menu = document.querySelector(".menu-icon");
+			menuItems = document.querySelectorAll(".nav__list-item");
+
+			applyListeners();
+		};
+
+		const applyListeners = () => {
+			menu.addEventListener("click", () => toggleClass(body, "nav-active"));
+		};
+
+		const toggleClass = (element, stringClass) => {
+			if (element.classList.contains(stringClass))
+				element.classList.remove(stringClass);
+			else element.classList.add(stringClass);
+		};
+
+		init();
+	})();
+
+	document
+		.querySelectorAll("nav__list-item")
+		.addEventListener("click", menuToggler);
+});
 
 // var body = document.body;
 // body.className = "red";

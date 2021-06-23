@@ -5,18 +5,30 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/nav.css" />
+		<link rel = "icon" type = "image/png" href = "assets/img/LogoNavbar.png">
+
 		<script src="assets/js/index.js"></script>
-		<title>Akshit Soneji Portfolio</title>
+		<title>Akshit Soneji's Resume on the Web</title>
 	</head>
 	<body>
-		<nav>
-			<li class="nav-logo">
-				as
-			</li>
-			<li>< About /></li>
-			<li>< Projects /></li>
-			<li>< Contact /></li>
+		<div class="menu-icon">
+			<span class="menu-icon__line menu-icon__line-left"></span>
+			<span class="menu-icon__line menu-icon__line-center"></span>
+			<span class="menu-icon__line menu-icon__line-right"></span>
+		</div>
+
+		<nav class="nav">
+			<div class="nav__content">
+				<ul class="nav__list">
+					<li class="nav__list-item" onclick="menuToggler()">Home</li>
+					<li class="nav__list-item">About</li>
+					<li class="nav__list-item">Projects</li>
+					<li class="nav__list-item">Contact</li>
+				</ul>
+			</div>
 		</nav>
+
 		<div id="landing-bg">
 			<svg
 				id="logo"
@@ -49,19 +61,26 @@
 				</g>
 			</svg>
 			<h1 id="logo-text">Akshit Soneji</h1>
-			<img class="scroll-for-more" src="./assets/img/scrollformore.svg" />
+			<!-- <img class="scroll-for-more" src="./assets/img/scrollformore.svg" /> -->
+			<!-- <a title="Scroll Down" href="#" class="mouse-scroll" data-target="message">
+				<span class="mouse">
+					<span></span>
+				</span>
+			</a> -->
+			<div class='icon-scroll'></div>
+
 		</div>
 
 		<section class="about-page">
 			<div class="row">
 				<div class="column-left">
-					<h1 class="about-page-heading">HELLO WORLD</h1>
+					<!-- <h1 class="about-page-heading">HELLO WORLD</h1>
 					<p class="about-page-subheading">
 						Hi, I'm Akshit Soneji, based in Gujarat, India. Currently studying
 						(also looking for interesting job offers) for Web Development.
 
 						<div>View More</div>
-					</p>
+					</p> -->
 
 					<div class="social-media-handles">
 						<h1 class="social-media-heading">Social Media</h1>
