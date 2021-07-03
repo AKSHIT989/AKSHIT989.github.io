@@ -10,37 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		logo.style.animation = `fill 1s ease forwards ${delay}s`;
 	}
+	document.querySelector(".nav__content").style.visibility = "hidden";
 	animateSgv("logo", 0, 1);
-	const menuToggler = (() => {
-		let body;
-		let menu;
-		let menuItems;
-
-		const init = () => {
-			body = document.querySelector("body");
-			menu = document.querySelector(".menu-icon");
-			menuItems = document.querySelectorAll(".nav__list-item");
-
-			applyListeners();
-		};
-
-		const applyListeners = () => {
-			menu.addEventListener("click", () => toggleClass(body, "nav-active"));
-		};
-
-		const toggleClass = (element, stringClass) => {
-			if (element.classList.contains(stringClass))
-				element.classList.remove(stringClass);
-			else element.classList.add(stringClass);
-		};
-
-		init();
-	})();
-
-	document
-		.querySelectorAll("nav__list-item")
-		.addEventListener("click", menuToggler);
 });
+let body;
+let menu;
+let menuItems;
+
+body = document.querySelector("body");
+menu = document.querySelector(".menu-icon");
+menuItems = document.querySelector(".nav__content");
+
+menu.addEventListener("click", () => toggleClass(body, "nav-active"));
+
+const toggleClass = (element, stringClass) => {
+	if (element.classList.contains(stringClass)) {
+		element.classList.remove(stringClass);
+		menuItems.style.visibility = "hidden";
+	} else {
+		element.classList.add(stringClass);
+		menuItems.style.visibility = "visible";
+	}
+};
 
 // var body = document.body;
 // body.className = "red";
