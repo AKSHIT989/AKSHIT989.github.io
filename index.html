@@ -6,35 +6,48 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/nav.css" />
-		<link rel = "icon" type = "image/png" href = "assets/img/LogoNavbar.png">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="icon" type="image/png" href="assets/img/LogoNavbar.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 		<title>Akshit Soneji's Resume on the Web</title>
 	</head>
 	<body>
-
 		<nav class="nav">
+			<!-- NAVBAR-->
 			<div class="menu-icon">
 				<div class="menu-icon__line menu-icon__line-left"></div>
 				<div class="menu-icon__line menu-icon__line-center"></div>
 				<div class="menu-icon__line menu-icon__line-right"></div>
 			</div>
-		
+
 			<div class="nav__content">
 				<ul class="nav__list">
 					<li class="nav__list-item" onclick="menuToggler()">Home</li>
 					<li class="nav__list-item">About</li>
+					<li class="nav__list-item">Skills</li>
 					<li class="nav__list-item">Projects</li>
 					<li class="nav__list-item">Contact</li>
 				</ul>
 			</div>
 
 			<div class="social-media">
-				<a class="fa fa-github" href="https://github.com/AKSHIT989" target="_blank"></a>
-				<a class="fa fa-linkedin" href="https://www.linkedin.com/in/akshit-soneji/" target="_blank"></a>
+				<a
+					class="fa fa-github"
+					href="https://github.com/AKSHIT989"
+					target="_blank"
+				></a>
+				<a
+					class="fa fa-linkedin"
+					href="https://www.linkedin.com/in/akshit-soneji/"
+					target="_blank"
+				></a>
 			</div>
 		</nav>
 
 		<div id="landing-bg">
+			<!--LANDING PAGE-->
 			<svg
 				id="logo"
 				fill="none"
@@ -66,23 +79,53 @@
 				</g>
 			</svg>
 			<h1 id="logo-text">Akshit Soneji</h1>
-			<div class='icon-scroll'></div>
-
+			<div class="icon-scroll"></div>
 		</div>
+		<div style="padding: 2.5rem; background-color: #00131c"></div>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path
+				fill="#00131C"
+				fill-opacity="1"
+				d="M0,128L48,154.7C96,181,192,235,288,229.3C384,224,480,160,576,160C672,160,768,224,864,229.3C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+			></path>
+		</svg>
 
 		<section class="about-page">
+			<!--ABOUT PAGE-->
+			<h1 class="about-page-heading">
+				<!-- <span class="section-number">01</span> -->
+				<span class="section-heading">About Me</span>
+			</h1>
 			<div class="row">
 				<div class="column-left">
-					<!-- <h1 class="about-page-heading">HELLO WORLD</h1>
+					<figure>
+						<img
+							style="
+								width: 100%;
+								height: 100%;
+								border-radius: 50%;
+								filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+							"
+							id="akshit-image"
+							src="./assets/img/AkshitGithub1.png"
+							alt="Akshit Image"
+						/>
+					</figure>
+				</div>
+				<div class="column-right">
 					<p class="about-page-subheading">
-						Hi, I'm Akshit Soneji, based in Gujarat, India. Currently studying
-						(also looking for interesting job offers) for Web Development.
+						Hi I'm Akshit (AX8) Soneji, a 19 year old Web Developer living in
+						Gujarat, India. Currently studying Computer Engineering and a part
+						of AWS Students' Club.
+						<br /><br />
+						Apart from coding I am a state-level Badminton player and playing
+						<a href="https://www.chess.com/member/ax8_zeus">chess</a> and video
+						games and reading novels. <br /><br />
+						Hit me up and let's create something special!!!
+					</p>
 
-						<div>View More</div>
-					</p> -->
-
-					<div class="social-media-handles">
-						<h1 class="social-media-heading">Social Media</h1>
+					<!-- <div class="social-media-handles">
+						<h1 class="social-media-heading">FAILing BETTER</h1>
 						<p class="social-media-subtitle">
 							<ul>
 								<li>Github </li>
@@ -90,20 +133,17 @@
 								<li>Instagram</li>
 							</ul>
 						</p>
-					</div>
-				</div>
-				<div class="column-right">
+					</div> -->
+					<br />
 					<img
-						id="akshit-image"
-						src="./assets/img/AkshitGithub.png"
-						alt="Akshit Image"
+						src="https://grass-graph.moshimo.works/images/AKSHIT989.png"
+						alt="AKSHIT989's Github Graph"
 					/>
 				</div>
 			</div>
 		</section>
 
-		<section class="hello">Skills</section>
+		<!-- <section class="hello">Skills</section> -->
 		<script src="assets/js/index.js"></script>
-
 	</body>
 </html>
