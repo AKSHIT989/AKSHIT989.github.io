@@ -165,8 +165,8 @@ nav li {
 	}
 }
 
-.about-page {
-	margin: 0;
+.about-page,
+.projects-page {
 	margin: 5rem;
 }
 
@@ -210,11 +210,34 @@ nav li {
 	flex-direction: row;
 }
 
-.about-page-heading {
+.about-page-heading,
+.project-page-heading {
+	margin: 5rem 0;
 	font-size: 5rem;
 	text-align: center;
 	color: red;
 	font-family: "Dela Gothic One", cursive;
+}
+.about-page-heading::after,
+.project-page-heading::after {
+	content: ".";
+	color: #0ff;
+}
+.skills-page-heading {
+	font-size: 5rem;
+	text-align: center;
+	color: white;
+	font-family: "Dela Gothic One", cursive;
+}
+
+.skills-page-heading::after {
+	content: ".";
+	color: #d61f5d;
+}
+.skills-content {
+	padding: 5rem;
+	font-size: 1.5rem;
+	font-family: "Tahoma", sans-serif;
 }
 
 .about-page-subheading {
@@ -223,12 +246,6 @@ nav li {
 	text-align: left;
 	color: gray;
 	font-family: "Raleway", cursive;
-
-	/* font-family: "Tahoma", sans-serif; */
-}
-.section-heading::after {
-	content: ".";
-	color: #0ff;
 }
 .social-media-handles {
 	margin-top: 5rem;
@@ -308,6 +325,12 @@ nav li {
 		transform: translateY(20px);
 	}
 }
+
+.skills {
+	background: #00131c;
+	color: white;
+}
+
 ::-webkit-scrollbar {
 	width: 5px;
 }
