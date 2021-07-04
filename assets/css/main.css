@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"); /*For LOGO*/
 
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"); /*CONTACT PAGE*/
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -14,24 +12,10 @@
 }
 body {
 	background-color: #fff;
+	font-family: "Public Sans", sans-serif;
 }
 
-#landing-bg {
-	height: 100vh;
-	width: 100%;
-	background-image: url(../img/akshit-bg.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-#logo {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	display: inline-block; /* change the default display type to inline-block */
-	overflow: hidden;
-}
+/* NAVBAR */
 
 nav {
 	width: 100%;
@@ -48,56 +32,30 @@ nav li {
 	font-family: "Bebas Neue", cursive;
 }
 
-.scroll-for-more {
+/*Landing Section CSS*/
+#landing-bg {
+	height: 100vh;
+	width: 100%;
+	background-image: url(../img/akshit-bg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#logo {
 	position: absolute;
-	top: calc(100vh - 100px);
-	left: calc(50% - 100px);
-	transform-origin: center;
-
-	-webkit-animation: spin 8s linear infinite;
-	-moz-animation: spin 8s linear infinite;
-	animation: spin 8s linear infinite;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block; /* change the default display type to inline-block */
+	overflow: hidden;
 }
-
-@-moz-keyframes spin {
-	100% {
-		-moz-transform: rotate(360deg);
-	}
-}
-@-webkit-keyframes spin {
-	100% {
-		-webkit-transform: rotate(360deg);
-	}
-}
-@keyframes spin {
-	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes line-anim {
-	to {
-		stroke-dashoffset: 0;
-	}
-}
-@keyframes fill {
-	from {
-		fill: transparent;
-	}
-	to {
-		fill: #d61f5d;
-		filter: drop-shadow(0.5rem 0.5rem black);
-	}
-}
-
 #logo-text {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	font-size: 4em;
+	font-size: 4.5rem;
 	text-shadow: white;
 	font-family: "Kaushan Script", cursive;
 	white-space: nowrap;
@@ -112,7 +70,23 @@ nav li {
 
 @media only screen and (max-width: 600px) {
 	#logo-text {
-		font-size: 50px;
+		font-size: 3.5rem;
+	}
+}
+
+/* LOGO ANIMATION */
+@keyframes line-anim {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes fill {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: #d61f5d;
+		filter: drop-shadow(0.5rem 0.5rem black);
 	}
 }
 
@@ -164,52 +138,25 @@ nav li {
 		opacity: 1;
 	}
 }
-
+/* ABOUT PAGE */
 .about-page {
 	margin: 5rem;
 }
-.projects-page {
-	margin: 5rem 0rem 5rem 5rem;
-}
-.projects-section {
-	padding: 1rem;
-	overflow-x: scroll;
-}
+
 #akshit-image {
 	margin: 0;
-	/* height: 120vh; */
 	width: 100%;
-	padding: 1rem;
 }
 
-/* Create two equal columns that floats next to each other */
-
 .column-left {
-	/* flex: content; */
-	/* width: 41.6666666667%; */
 	width: 33.3333333333%;
 	padding: 10px;
 }
 
 .column-right {
-	/* float: left; */
-	/* width: 58.3333333333%; */
 	width: 66.6666666667%;
 	padding: 10px;
 }
-
-@media only screen and (max-width: 600px) {
-	.column-left,
-	.column-right {
-		display: flex;
-		clear: both;
-		width: 100%;
-		margin-left: 0%;
-	}
-	.about-page {
-		margin-left: 0%;
-	}
-} /* Clear floats after the columns */
 .row {
 	display: flex;
 	flex-direction: row;
@@ -217,8 +164,76 @@ nav li {
 .col {
 	flex-direction: column;
 }
+.d-flex {
+	display: flex;
+}
 
-.about-page-heading,
+@media only screen and (max-width: 600px) {
+	.row {
+		text-align: justify;
+		text-justify: inter-word;
+		display: flex;
+		flex-direction: column;
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+	.column-left,
+	.column-right {
+		margin-left: 0px;
+		min-width: 100%;
+	}
+	.column-right {
+		text-align: justify;
+		font-size: 0.75rem;
+	}
+}
+
+.dark-heading {
+	font-size: 5rem;
+	text-align: center;
+	color: white;
+	font-family: "Kaushan Script", cursive;
+}
+.light-heading {
+	margin: 5rem 0;
+	font-size: 5rem;
+	text-align: center;
+	color: #00131c;
+	font-family: "Kaushan Script", cursive;
+}
+
+.light-heading::after {
+	content: ".";
+	color: #0ff;
+}
+.dark-heading::after {
+	content: ".";
+	color: #d61f5d;
+}
+
+@media only screen and (max-width: 600px) {
+	.about-page {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.dark-heading,
+	.light-heading {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		width: 100%;
+		font-size: 3.5rem;
+	}
+}
+
+.projects-page {
+	margin: 5rem 0rem 5rem 5rem;
+}
+.projects-section {
+	padding: 1rem;
+	overflow-x: scroll;
+}
+
 .project-page-heading {
 	margin: 5rem 0;
 	font-size: 5rem;
@@ -226,7 +241,6 @@ nav li {
 	color: #00131c;
 	font-family: "Kaushan Script", cursive;
 }
-.about-page-heading::after,
 .project-page-heading::after {
 	content: ".";
 	color: #0ff;
@@ -251,11 +265,9 @@ nav li {
 }
 
 .about-page-subheading {
-	margin-top: 5rem;
 	font-size: 1.5em;
 	text-align: left;
 	color: gray;
-	font-family: "Raleway", cursive;
 }
 .social-media-handles {
 	margin-top: 5rem;
@@ -285,10 +297,6 @@ nav li {
 	padding: 0.5rem 0;
 }
 
-.section-number {
-	color: black;
-	font-family: "Zen Dots", cursive;
-}
 .icon-scroll,
 .icon-scroll:before {
 	position: absolute;
