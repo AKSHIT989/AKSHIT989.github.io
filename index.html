@@ -11,7 +11,7 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 		/>
-		<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>		
 		<title>Akshit Soneji's Resume on the Web</title>
 	</head>
 	<body>
@@ -139,11 +139,23 @@
 		></div>
 		<!--SKILLS-->
 		<section class="skills">
-			<h2 class="skills-page-heading">Skills</h2>
+			<h2 class="dark-heading">Skills</h2>
 			<div class="skills-content">
 				<!--PROGRAMMING-->
 				<div class="row">
-					<div style="display: flex; align-items: center">
+					<div class="chart">
+						<!-- Programming: -->
+						<canvas id="chart-programming" height="300px"></canvas>
+					</div>
+					<div class="chart">
+						<!-- Web: -->
+						<canvas id="chart-web" height="300px"></canvas>
+					</div>
+					<div class="chart">
+						<!-- Web: -->
+						<canvas id="chart-tools" height="300px"></canvas>
+					</div>
+					<!-- <div style="display: flex; align-items: center">
 						<span style="color: #d61f5d">Programming:</span>
 						<img
 							src="https://img.icons8.com/color/48/000000/python--v1.png"
@@ -161,10 +173,10 @@
 							src="https://img.icons8.com/color/48/000000/c-programming.png"
 							alt="C"
 						/>
-					</div>
+					</div> -->
 				</div>
 				<!--BACKEND-->
-				<div class="row">
+				<!-- <div class="row">
 					<div style="display: flex; align-items: center">
 						<span style="color: #d61f5d">Backend:&nbsp;</span>
 						<img
@@ -193,9 +205,9 @@
 							alt="GraphQL"
 						/>
 					</div>
-				</div>
+				</div> -->
 				<!--FRONTEND-->
-				<div class="row">
+				<!-- <div class="row">
 					<div style="display: flex; align-items: center">
 						<span style="color: #d61f5d">Frontend:&nbsp;</span>
 						<img
@@ -223,9 +235,9 @@
 							alt="Webpack"
 						/>
 					</div>
-				</div>
+				</div> -->
 				<!--TOOLS-->
-				<div class="row">
+				<!-- <div class="row">
 					<div style="display: flex; align-items: center">
 						<span style="color: #d61f5d">Tools:&nbsp;</span>
 						<img
@@ -254,7 +266,7 @@
 							src="https://img.icons8.com/color/48/000000/amazon-web-services.png"
 							alt="AWS"
 						/>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>

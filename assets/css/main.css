@@ -225,7 +225,11 @@ nav li {
 		font-size: 3.5rem;
 	}
 }
-
+/* SKILLS SECTION */
+.chart {
+	width: 33.3333333%;
+	height: 100%;
+}
 .projects-page {
 	margin: 5rem 0rem 5rem 5rem;
 }

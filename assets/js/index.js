@@ -32,30 +32,79 @@ const toggleClass = (element, stringClass) => {
 		menuItems.style.visibility = "visible";
 	}
 };
-const slider = document.querySelector(".projects-page");
-let mouseDown = false;
-let startX, scrollLeft;
+var ctpro = document.getElementById("chart-programming");
+var ctweb = document.getElementById("chart-web");
+var cttools = document.getElementById("chart-tools");
 
-let startDragging = function (e) {
-	mouseDown = true;
-	startX = e.pageX - slider.offsetLeft;
-	scrollLeft = slider.scrollLeft;
+var dataProgramming = {
+	datasets: [
+		{
+			label: "Languages", // for legend
+			data: [75, 85, 65, 80],
+			backgroundColor: ["#306998", "#F0DB4F", "#a6b1b7", "#F16529"],
+		},
+	],
+	labels: ["Python", "JavaScript", "C++", "HTML/CSS"],
 };
-let stopDragging = function (event) {
-	mouseDown = false;
+var dataWeb = {
+	datasets: [
+		{
+			label: "Web", // for legend
+			data: [90, 80, 85, 60],
+			backgroundColor: ["#61DBFB", "#3c873a ", "#F29111", "#e535ab"],
+		},
+	],
+	labels: ["ReactJS/Redux", "NodeJS", "MySQL/MongoDB/PostgreSQL", "GraphQL"],
+};
+var dataTools = {
+	datasets: [
+		{
+			label: "Tools", // for legend
+			data: [75, 85, 65, 70],
+			backgroundColor: ["#F34F29", "#0db7ed", "#00B9AD", "#E47911"],
+		},
+	],
+	labels: ["GIT", "Docker", "Elastic Search", "AWS"],
 };
 
-slider.addEventListener("mousemove", (e) => {
-	e.preventDefault();
-	if (!mouseDown) {
-		return;
-	}
-	const x = e.pageX - slider.offsetLeft;
-	const scroll = x - startX;
-	slider.scrollLeft = scrollLeft - scroll;
+new Chart(ctpro, {
+	type: "polarArea",
+	data: dataProgramming,
+	options: {
+		legend: {
+			labels: {
+				fontColor: "white",
+			},
+		},
+		scale: {
+			display: true,
+		},
+	},
 });
 
-// Add the event listeners
-slider.addEventListener("mousedown", startDragging, false);
-slider.addEventListener("mouseup", stopDragging, false);
-slider.addEventListener("mouseleave", stopDragging, false);
+new Chart(ctweb, {
+	type: "polarArea",
+	data: dataWeb,
+	options: {
+		scale: {
+			display: true,
+		},
+		legend: {
+			labels: {
+				fontColor: "white",
+			},
+		},
+	},
+});
+
+new Chart(cttools, {
+	type: "polarArea",
+	data: dataTools,
+	options: {
+		legend: {
+			labels: {
+				fontColor: "white",
+			},
+		},
+	},
+});
