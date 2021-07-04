@@ -72,12 +72,10 @@ new Chart(ctpro, {
 	data: dataProgramming,
 	options: {
 		legend: {
+			display: true,
 			labels: {
 				fontColor: "white",
 			},
-		},
-		scale: {
-			display: true,
 		},
 	},
 });
@@ -86,9 +84,6 @@ new Chart(ctweb, {
 	type: "polarArea",
 	data: dataWeb,
 	options: {
-		scale: {
-			display: true,
-		},
 		legend: {
 			labels: {
 				fontColor: "white",
