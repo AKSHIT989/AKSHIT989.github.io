@@ -32,46 +32,30 @@ const toggleClass = (element, stringClass) => {
 		menuItems.style.visibility = "visible";
 	}
 };
+const slider = document.querySelector(".projects-page");
+let mouseDown = false;
+let startX, scrollLeft;
 
-// var body = document.body;
-// body.className = "red";
-// var slider = new Swiper(".swiper-container", {
-// 	pagination: ".swiper-pagination",
-// 	direction: "horizontal",
-// 	slidesPerView: 1,
-// 	paginationClickable: true,
-// 	spaceBetween: 30,
-// 	mousewheelControl: true,
-// 	onSlideChangeStart: function (swiper) {
-// 		var currentSlide = swiper.slides[swiper.activeIndex];
-// 		body.className = currentSlide.getAttribute("data-bg");
-// 		console.log(currentSlide.getAttribute("data-bg"));
-// 	},
-// });
+let startDragging = function (e) {
+	mouseDown = true;
+	startX = e.pageX - slider.offsetLeft;
+	scrollLeft = slider.scrollLeft;
+};
+let stopDragging = function (event) {
+	mouseDown = false;
+};
 
-// var offset = $(window).scrollTop() - actualBlock.offset().top,
-// 	windowHeight = $(window).height();
+slider.addEventListener("mousemove", (e) => {
+	e.preventDefault();
+	if (!mouseDown) {
+		return;
+	}
+	const x = e.pageX - slider.offsetLeft;
+	const scroll = x - startX;
+	slider.scrollLeft = scrollLeft - scroll;
+});
 
-// if (offset >= -windowHeight && offset <= 0) {
-// 	// section entering the viewport
-// 	translateY = (-offset * 100) / windowHeight;
-// 	scale = 1;
-// 	opacity = 1;
-// } else if (offset > 0 && offset <= windowHeight) {
-// 	//section leaving the viewport
-// 	scale = 1 - (offset * 0.3) / windowHeight;
-// 	opacity = 1 - offset / windowHeight;
-// 	translateY = 0;
-// 	boxShadowBlur = 40 * (offset / windowHeight);
-// }
-// $(window).scroll(function () {
-// 	var scroll = $(window).scrollTop();
-// 	$(".zoom img").css({
-// 		transform:
-// 			"translate3d(-50%, -" +
-// 			scroll / 100 +
-// 			"%, 0) scale(" +
-// 			(100 + scroll / 5) / 100 +
-// 			")",
-// 	});
-// });
+// Add the event listeners
+slider.addEventListener("mousedown", startDragging, false);
+slider.addEventListener("mouseup", stopDragging, false);
+slider.addEventListener("mouseleave", stopDragging, false);
