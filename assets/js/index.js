@@ -51,7 +51,7 @@ var dataWeb = {
 		{
 			label: "Web", // for legend
 			data: [90, 80, 85, 60],
-			backgroundColor: ["#61DBFB", "#3c873a ", "#F29111", "#e535ab"],
+			backgroundColor: ["#61DBFB", "#3c873a", "#F29111", "#e535ab"],
 		},
 	],
 	labels: ["ReactJS/Redux", "NodeJS", "MySQL/MongoDB/PostgreSQL", "GraphQL"],
