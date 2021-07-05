@@ -82,8 +82,13 @@ body {
 	text-align: center;
 	font-size: calc(5vw + 10px);
 	font-weight: 200;
-	cursor: pointer;
 	transition: visibility 0.3s;
+}
+@media only screen and (max-width: 576px) {
+	.nav__content {
+		cursor: none;
+		font-size: calc(15vw + 10px);
+	}
 }
 .nav__list-item {
 	display: flex;
