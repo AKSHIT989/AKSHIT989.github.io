@@ -13,15 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.querySelector(".nav__content").style.visibility = "hidden";
 	animateSgv("logo", 0, 1);
 });
-let body;
-let menu;
-let menuItems;
-
-body = document.querySelector("body");
-menu = document.querySelector(".menu-icon");
-menuItems = document.querySelector(".nav__content");
-
-menu.addEventListener("click", () => toggleClass(body, "nav-active"));
 
 const toggleClass = (element, stringClass) => {
 	if (element.classList.contains(stringClass)) {
@@ -32,6 +23,22 @@ const toggleClass = (element, stringClass) => {
 		menuItems.style.visibility = "visible";
 	}
 };
+let body;
+let menu;
+let menuItems;
+let navListItems;
+body = document.querySelector("body");
+menu = document.querySelector(".menu-icon");
+menuItems = document.querySelector(".nav__content");
+menu.addEventListener("click", () => toggleClass(body, "nav-active"));
+navListItems = document.querySelectorAll(".nav__list-item");
+
+[...navListItems].map((item, idx) => {
+	item.addEventListener("click", () => {
+		document.getElementById(item.innerHTML).scrollIntoView();
+		toggleClass(body, "nav-active");
+	});
+});
 var ctpro = document.getElementById("chart-programming");
 var ctweb = document.getElementById("chart-web");
 var cttools = document.getElementById("chart-tools");
