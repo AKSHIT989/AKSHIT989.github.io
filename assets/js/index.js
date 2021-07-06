@@ -1,18 +1,62 @@
-document.addEventListener("DOMContentLoaded", () => {
-	function animateSgv(id, delay, delayIncrement) {
-		const logo = document.getElementById(id);
-		const logoPaths = document.querySelectorAll(`#${id} path`);
-		for (let i = 0; i < logoPaths.length; i++) {
-			logoPaths[i].style.strokeDasharray = logoPaths[i].getTotalLength();
-			logoPaths[i].style.strokeDashoffset = logoPaths[i].getTotalLength();
-			logoPaths[i].style.animation = `line-anim 2s ease forwards ${delay}s`;
-			delay += delayIncrement;
-		}
-		logo.style.animation = `fill 1s ease forwards ${delay}s`;
+document.onreadystatechange = function () {
+	if (document.readyState !== "complete") {
+		document.querySelector("body").style.visibility = "hidden";
+		document.querySelector("#preloader").style.visibility = "visible";
+	} else {
+		document.querySelector("#preloader").style.display = "none";
+		document.querySelector("body").style.visibility = "visible";
+		animateSgv("logo", 0, 1);
 	}
+};
+(function () {
+	function id(v) {
+		return document.getElementById(v);
+	}
+	function loadbar() {
+		var ovrl = id("overlay"),
+			prog = id("progress"),
+			stat = id("progstat"),
+			img = document.images,
+			c = 0;
+		tot = img.length;
+
+		function imgLoaded() {
+			c += 1;
+			var perc = (((100 / tot) * c) << 0) + "%";
+			prog.style.width = perc;
+			stat.innerHTML = "Loading " + perc;
+			if (c === tot) return doneLoading();
+		}
+		function doneLoading() {
+			ovrl.style.opacity = 0;
+			setTimeout(function () {
+				ovrl.style.display = "none";
+			}, 1200);
+		}
+		for (var i = 0; i < tot; i++) {
+			var tImg = new Image();
+			tImg.onload = imgLoaded;
+			tImg.onerror = imgLoaded;
+			tImg.src = img[i].src;
+		}
+	}
+	document.addEventListener("DOMContentLoaded", loadbar, false);
+})();
+// document.addEventListener("DOMContentLoaded", () => {
+function animateSgv(id, delay, delayIncrement) {
+	const logo = document.getElementById(id);
+	const logoPaths = document.querySelectorAll(`#${id} path`);
+	for (let i = 0; i < logoPaths.length; i++) {
+		logoPaths[i].style.strokeDasharray = logoPaths[i].getTotalLength();
+		logoPaths[i].style.strokeDashoffset = logoPaths[i].getTotalLength();
+		logoPaths[i].style.animation = `line-anim 2s ease forwards ${delay}s`;
+		delay += delayIncrement;
+	}
+	logo.style.animation = `fill 1s ease forwards ${delay}s`;
 	document.querySelector(".nav__content").style.visibility = "hidden";
-	animateSgv("logo", 0, 1);
-});
+}
+// }
+// );
 
 const toggleClass = (element, stringClass) => {
 	if (element.classList.contains(stringClass)) {
