@@ -1,3 +1,4 @@
+AOS.init();
 document.onreadystatechange = function () {
 	if (document.readyState !== "complete") {
 		document.querySelector("body").style.visibility = "hidden";
@@ -13,12 +14,12 @@ document.onreadystatechange = function () {
 		return document.getElementById(v);
 	}
 	function loadbar() {
-		var ovrl = id("overlay"),
+		var ovrl = id("preloader"),
 			prog = id("progress"),
 			stat = id("progstat"),
 			img = document.images,
-			c = 0;
-		tot = img.length;
+			c = 0,
+			tot = img.length;
 
 		function imgLoaded() {
 			c += 1;
@@ -87,6 +88,18 @@ var ctpro = document.getElementById("chart-programming");
 var ctweb = document.getElementById("chart-web");
 var cttools = document.getElementById("chart-tools");
 
+var inView = false;
+
+function isScrolledIntoView(elem) {
+	var docViewTop = window.scrollY;
+	var docViewBottom = docViewTop + window.screen.height;
+
+	var elemTop = document.getElementById(elem).offsetTop;
+	var elemBottom = elemTop + document.getElementById(elem).style.height;
+
+	return elemTop <= docViewBottom && elemBottom >= docViewTop;
+}
+
 var dataProgramming = {
 	datasets: [
 		{
@@ -118,39 +131,74 @@ var dataTools = {
 	labels: ["GIT", "Docker", "Elastic Search", "AWS"],
 };
 
-new Chart(ctpro, {
-	type: "polarArea",
-	data: dataProgramming,
-	options: {
-		legend: {
-			display: true,
-			labels: {
-				fontColor: "white",
+window.onscroll = function () {
+	if (isScrolledIntoView("chart-programming")) {
+		if (inView) {
+			return;
+		}
+		inView = true;
+		new Chart(ctpro, {
+			type: "polarArea",
+			data: dataProgramming,
+			options: {
+				legend: {
+					display: true,
+					labels: {
+						fontColor: "white",
+					},
+				},
+				animation: {
+					duration: 1000,
+				},
 			},
-		},
-	},
-});
+		});
+	} else {
+		inView = false;
+	}
+	if (isScrolledIntoView("chart-web")) {
+		if (inView) {
+			return;
+		}
+		inView = true;
 
-new Chart(ctweb, {
-	type: "polarArea",
-	data: dataWeb,
-	options: {
-		legend: {
-			labels: {
-				fontColor: "white",
+		new Chart(ctweb, {
+			type: "polarArea",
+			data: dataWeb,
+			options: {
+				legend: {
+					labels: {
+						fontColor: "white",
+					},
+					animation: {
+						duration: 1000,
+					},
+				},
 			},
-		},
-	},
-});
+		});
+	} else {
+		inView = false;
+	}
+	if (isScrolledIntoView("chart-tools")) {
+		if (inView) {
+			return;
+		}
+		inView = true;
 
-new Chart(cttools, {
-	type: "polarArea",
-	data: dataTools,
-	options: {
-		legend: {
-			labels: {
-				fontColor: "white",
+		new Chart(cttools, {
+			type: "polarArea",
+			data: dataTools,
+			options: {
+				legend: {
+					labels: {
+						fontColor: "white",
+					},
+					animation: {
+						duration: 1000,
+					},
+				},
 			},
-		},
-	},
-});
+		});
+	} else {
+		inView = false;
+	}
+};

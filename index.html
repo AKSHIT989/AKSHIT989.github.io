@@ -1,3 +1,51 @@
+<!--
+	
+██╗  ██╗███████╗██╗     ██╗      ██████╗     ██╗    ██╗ ██████╗ ██████╗ ██╗     ██████╗
+██║  ██║██╔════╝██║     ██║     ██╔═══██╗    ██║    ██║██╔═══██╗██╔══██╗██║     ██╔══██╗
+███████║█████╗  ██║     ██║     ██║   ██║    ██║ █╗ ██║██║   ██║██████╔╝██║     ██║  ██║
+██╔══██║██╔══╝  ██║     ██║     ██║   ██║    ██║███╗██║██║   ██║██╔══██╗██║     ██║  ██║
+██║  ██║███████╗███████╗███████╗╚██████╔╝    ╚███╔███╔╝╚██████╔╝██║  ██║███████╗██████╔╝
+╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝
+
+Greetings !
+
+if (employer) {
+  yes, I'm always looking for great opportunities;
+}
+else if (want a website) {
+  ping me ! lets discuss how will I help you;
+}
+else if (geek) {
+  hi, I love to be friends with like minded people.
+  Message me, maybe we could help each other.
+}
+else {
+  goto: akshaysaini.in/404
+}
+________________________________________________________________________________________
+
+When I wrote this code, only God and I understood what I was doing
+Now, God only knows
+
+If you don't like anything on this website, bite me !
+________________________________________________________________________________________
+
+No copyright issues.
+Feel free to copy anything and everything from this website.
+If you need any help, ping me !
+________________________________________________________________________________________
+
+Cheers,
+Akshay Saini
+mailto: akshaysaini.in@gmail.com
+________________________________________________________________________________________
+
+I sincerely admit ! Not everything thing you saw on the website was developed by me from
+scratch, most of it is my original creation otherwise some of the elements are inspired
+or reproduced from the open source public code.
+
+SSSssshhhhh!! The code starts below 
+-->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,6 +58,11 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 		/>
+
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>		
 		<title>Akshit Soneji's Resume on the Web</title>
 	</head>
@@ -17,9 +70,11 @@
 		<div id="preloader">
 			<div id="progstat">Loading</div>
 			<div id="progress"></div>
+			<div id="wiper"></div>
 		</div>
+
+		<!-- NAVBAR-->
 		<nav class="nav">
-			<!-- NAVBAR-->
 			<div class="menu-icon">
 				<div class="menu-icon__line menu-icon__line-left"></div>
 				<div class="menu-icon__line menu-icon__line-center"></div>
@@ -96,11 +151,11 @@
 
 		<!--ABOUT PAGE-->
 		<section class="about-page" id="About">
-			<h1 class="light-heading">
+			<h1 class="light-heading" data-aos="fade-right">
 				<span class="section-heading">About Me</span>
 			</h1>
 			<div class="row">
-				<div class="column-left">
+				<div class="column-left" data-aos="fade-up">
 					<img
 						style="
 							border-radius: 50%;
@@ -111,7 +166,7 @@
 						alt="Akshit Image"
 					/>
 				</div>
-				<div class="column-right">
+				<div class="column-right" data-aos="fade-up">
 					<p class="about-page-subheading">
 						Hey I'm Akshit (AX8) Soneji, a 19 year old Web Developer living in
 						Gujarat, India. Currently studying Computer Engineering and a part
@@ -134,7 +189,7 @@
 		</section>
 		<!--SKILLS-->
 		<section class="skills" id="Skills">
-			<h2 class="dark-heading">Skills</h2>
+			<h2 class="dark-heading" data-aos="fade-right">Skills</h2>
 			<div class="skills-content">
 				<div class="row">
 					<div class="chart">
@@ -156,9 +211,9 @@
 
 		<!--PROJECTS-->
 		<section class="projects-page" id="Projects">
-			<h1 class="light-heading">
+			<h2 class="light-heading" data-aos="fade-right">
 				<span class="section-heading">Projects</span>
-			</h1>
+			</h2>
 			<div class="row">
 				<div class="container">
 					<img src="./assets/img/projects/LOR-Charusat.png" alt="Avatar" class="image">
@@ -200,10 +255,10 @@
 		</svg>
 		<!--CONTACT PAGE-->
 		<section class="contact-page" id="Contact">
-			<center class="hire-me-text">Available for work</center>
-			<h2 class="contact-heading hire-me">HIRE ME</h2>
-			<center class="hire-me-text">OR JUST SAY HI👋</center>
-			<center class="contact-me">
+			<center class="hire-me-text" data-aos="fade-up">Available for work</center>
+			<h2 class="contact-heading hire-me" data-aos="fade-up">HIRE ME</h2>
+			<center class="hire-me-text" data-aos="fade-up">OR JUST SAY HI👋</center>
+			<center class="contact-me" data-aos="fade-up">
 				<div class="footer-contact">
 					<a href="mailto:sonejiakshit989@gmail.com">
 						✉️ sonejiakshit989@gmail.com
