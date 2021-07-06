@@ -1,3 +1,6 @@
+console.log(
+	"Hi Geek, \nI love to be friends with like minded people. Message me, maybe we could help each other.\nCheers, Akshit Soneji\nmailto: sonejiakshit989@gmail.com"
+);
 AOS.init();
 document.onreadystatechange = function () {
 	if (document.readyState !== "complete") {
