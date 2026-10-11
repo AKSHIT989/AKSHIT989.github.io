@@ -23,7 +23,7 @@ mailto: sonejiakshit989@gmail.com
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Akshit Soneji - Staff Engineer, Security & Networking Systems at Palo Alto Networks. Also a photographer." />
+		<meta name="description" content="Akshit Soneji - Senior Staff Engineer, Security & Networking Systems at Palo Alto Networks. Also a photographer." />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/png" href="assets/img/LogoNavbar.png" />
 		<link
@@ -106,7 +106,7 @@ mailto: sonejiakshit989@gmail.com
 				</g>
 			</svg>
 			<h1 id="logo-text">Akshit Soneji</h1>
-			<p id="hero-tagline">Staff Engineer · Security &amp; Networking Systems</p>
+			<p id="hero-tagline">Senior Staff Engineer · Security &amp; Networking Systems</p>
 			<div id="hero-tags">
 				<a href="#About">About</a>
 				<span class="hero-tag-sep">/</span>
@@ -142,8 +142,8 @@ mailto: sonejiakshit989@gmail.com
 					<img src="./assets/img/AkshitProfile.png" alt="Akshit Soneji" />
 				</figure>
 				<div class="about-copy" data-reveal>
-					<p>Hey, I'm <strong>Akshit Soneji</strong>. I'm a Staff Engineer working on Security &amp; Networking Systems at Palo Alto Networks, and before that I was at NonceBlox.</p>
-					<p>I own PAN-OS development for cellular firewalls, FIPS-certified cryptographic modules, and OpenSSL / TLS / X.509 PKI architecture, and I've filed a patent for an AI framework that detects post-quantum "harvest now, decrypt later" attacks. I started out as a frontend developer at Ionio LLC, then moved into full-stack blockchain engineering at NonceBlox before landing in security and networking.</p>
+					<p>Hey, I'm <strong>Akshit Soneji</strong>. I'm a Senior Staff Engineer working on Security &amp; Networking Systems at Palo Alto Networks, and before that I was at NonceBlox.</p>
+					<p>I own PAN-OS development for cellular firewalls, FIPS-certified cryptographic modules, and OpenSSL / TLS / X.509 PKI architecture, and I've filed a patent for an AI framework that detects post-quantum "harvest now, decrypt later" attacks, and built a working version of it called Heimdall that won a hackathon. I started out as a frontend developer at Ionio LLC, then moved into full-stack blockchain engineering at NonceBlox before landing in security and networking.</p>
 					<p>TL:DR - I can work across security, networking, cryptography, blockchain and full-stack. And yeah, I'm folding AI into most of it these days too.</p>
 					<p>Outside of work I play badminton (state-level, a while back now), spend too much time on <a href="https://www.chess.com/member/ax8_zeus" target="_blank">chess</a>, and I've been getting into photography lately - a few shots are further down this page.</p>
 					<div class="about-tags">
@@ -183,9 +183,10 @@ mailto: sonejiakshit989@gmail.com
 						</div>
 						<div class="timeline-body">
 							<h3 class="timeline-company">Palo Alto Networks</h3>
-							<div class="timeline-role">Staff Engineer</div>
+							<div class="timeline-role">Senior Staff Engineer · SDE-3 equivalent</div>
 							<ul>
-								<li>Filed a patent for an AI framework that detects post-quantum "Harvest Now, Decrypt Later" attacks.</li>
+								<li>Promoted from Staff Engineer to Senior Staff Engineer.</li>
+								<li>Filed a patent for an AI framework that detects post-quantum "Harvest Now, Decrypt Later" attacks, then built it into Heimdall, a live HNDL-defense demo that won the PANW NetSec Hackathon.</li>
 								<li>Owned PAN-OS development for PA-52R-5G - PANW's first Cellular Firewall with VIMS support - and hold a company-wide record for remote bring-up in a single day.</li>
 								<li>Key contributor to IPv6 on cellular interface, Multiple APN and DNN support for 5G-integrated firewalls.</li>
 								<li>Built and shipped an AI ticket-triage pipeline (LLM + MCP) that parses logs and stack traces automatically, cutting engineering resolution time by 30%.</li>
@@ -264,6 +265,19 @@ mailto: sonejiakshit989@gmail.com
 				<span class="marker-index">04</span><span class="marker-label">Projects</span>
 			</div>
 			<h2 class="section-title dark" data-reveal-text>Selected work.</h2>
+
+			<article class="project-feature" data-reveal>
+				<div class="feature-tag">Hackathon Winner · Patent Filed · Security</div>
+				<h3>Heimdall</h3>
+				<p>The demoable version of my patent-filed idea for stopping Harvest-Now-Decrypt-Later attacks. Heimdall watches the cloud control plane, scores every CloudTrail event through four detection pillars and four ML models, and boils it down to one security posture score. When a bulk copy looks like a harvest, an agent investigates and plans a containment that, after human approval, actually executes on AWS. Demoed live on a real account, not a simulation.</p>
+				<div class="pill-row">
+					<span class="pill">LangGraph</span>
+					<span class="pill">AWS CloudTrail</span>
+					<span class="pill">Gradient-Boosted ML</span>
+					<span class="pill">LLM Agents</span>
+					<span class="pill">HNDL Detection</span>
+				</div>
+			</article>
 
 			<article class="project-feature" data-reveal>
 				<div class="feature-tag">Hackathon Winner · AI · Security</div>

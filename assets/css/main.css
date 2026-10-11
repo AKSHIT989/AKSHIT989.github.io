@@ -364,6 +364,13 @@ body.nav-active .nav__list-item:nth-child(7) {
 	}
 }
 
+@media only screen and (max-width: 400px) {
+	#hero-tagline {
+		font-size: 0.62rem;
+		letter-spacing: 0.13em;
+	}
+}
+
 /* LOGO ANIMATION */
 @keyframes line-anim {
 	to {
@@ -1036,6 +1043,9 @@ body::before {
 	border-radius: 0.5rem;
 	background-color: var(--paper);
 	color: var(--ink);
+}
+.project-feature:first-of-type {
+	margin-bottom: 2rem;
 }
 .feature-tag {
 	font-family: "Bebas Neue", cursive;
